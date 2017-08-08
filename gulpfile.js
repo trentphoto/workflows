@@ -28,7 +28,7 @@ gulp.task('js', function () {
     .pipe(gulp.dest('builds/development/js'))
 });
 
-gulp.task('sass' function () {
+gulp.task('compass', function () {
   gulp.src(sassSources)
   .pipe(compass({
     sass: 'components/sass',
@@ -38,3 +38,5 @@ gulp.task('sass' function () {
   .on('error', gutil.log)
   .pipe(gulp.dest('builds/development/css'))
 });
+
+gulp.task('default', ['coffee', 'js', 'compass'])
